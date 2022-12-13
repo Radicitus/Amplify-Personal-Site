@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["prod"]
+    branches: ["prod", "dev"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -30,13 +30,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+
+      - name: Set Up Node
+        uses: actions/setup-node@v3
         with:
-          # Upload entire repository
-          path: './cam-personal-site'
+          node-version: 16
+          cache: npm
+
+      - name: Build
+        run : |
+          npm ci
+          npm run build
+          npm run export
+          touch out/.nojekyll
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+        uses: JamesIves/github-pages-deploy-action@4.4.0
+        with:
+          branch: gh-pages
+          folder: out
+
+
