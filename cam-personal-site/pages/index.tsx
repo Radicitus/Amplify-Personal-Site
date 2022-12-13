@@ -12,30 +12,36 @@ import web3 from "../public/web3.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
+import { useState } from "react";
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+
   return (
-    <div>
+    <div className={darkMode ? "dark" : ""}>
       <Head>
         <title>Cameron Sherry Portfolio</title>
         <meta name={"description"} content={"A little bit of Cam!"} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={"bg-white px-10 md:px-20 lg:px-40"}>
+      <main className={"bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-800"}>
         <section className={"min-h-screen"}>
           <nav className={"py-10 mb-12 flex justify-between"}>
             <h1 className={"text-xl font-burtons"}>Cameron Sherry</h1>
             <ul className={"flex items-center"}>
               <li>
-                <BsFillMoonStarsFill className={"cursor-pointer text-2xl"} />
+                <BsFillMoonStarsFill
+                  onClick={() => setDarkMode(!darkMode)}
+                  className={"cursor-pointer text-2xl"}
+                />
               </li>
               <li>
                 <a
                   className={
                     "bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8"
                   }
-                  href="#"
+                  href="https://docs.google.com/document/d/1EFQWbxjIMiXidQAHxIKnt85AeuAi1DBiW-SGAtmY6bU/edit?usp=sharing"
                 >
                   Resume
                 </a>
@@ -67,9 +73,15 @@ export default function Home() {
           <div
             className={"text-5xl flex justify-center gap-16 py-3 text-gray-600"}
           >
-            <AiFillGithub />
-            <AiFillLinkedin />
-            <AiFillInstagram />
+            <a href="https://github.com/Radicitus">
+              <AiFillGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/crsherry/">
+              <AiFillLinkedin />
+            </a>
+            <a href="https://www.instagram.com/wondercameron/">
+              <AiFillInstagram />
+            </a>
           </div>
 
           <div
@@ -201,66 +213,48 @@ export default function Home() {
             <div className={"basis-1/3 flex-1"}>
               <Image
                 src={web1}
-                alt={"Web 1"}
-                className={"rounded-lg object-cover"}
-                width={"100%"}
-                height={"100%"}
-                layout={"responsive"}
+                alt={"Portfolio 1"}
+                className={"rounded-lg object-cover w-full h-full"}
               />
             </div>
 
             <div className={"basis-1/3 flex-1"}>
               <Image
                 src={web2}
-                alt={"Web 1"}
-                className={"rounded-lg object-cover"}
-                width={"100%"}
-                height={"100%"}
-                layout={"responsive"}
+                alt={"Portfolio 2"}
+                className={"rounded-lg object-cover w-full h-full"}
               />
             </div>
 
             <div className={"basis-1/3 flex-1"}>
               <Image
                 src={web3}
-                alt={"Web 1"}
-                className={"rounded-lg object-cover"}
-                width={"100%"}
-                height={"100%"}
-                layout={"responsive"}
+                alt={"Portfolio 3"}
+                className={"rounded-lg object-cover w-full h-full"}
               />
             </div>
 
             <div className={"basis-1/3 flex-1"}>
               <Image
                 src={web4}
-                alt={"Web 1"}
-                className={"rounded-lg object-cover"}
-                width={"100%"}
-                height={"100%"}
-                layout={"responsive"}
+                alt={"Portfolio 4"}
+                className={"rounded-lg object-cover w-full h-full"}
               />
             </div>
 
             <div className={"basis-1/3 flex-1"}>
               <Image
                 src={web5}
-                alt={"Web 1"}
-                className={"rounded-lg object-cover"}
-                width={"100%"}
-                height={"100%"}
-                layout={"responsive"}
+                alt={"Portfolio 5"}
+                className={"rounded-lg object-cover w-full h-full"}
               />
             </div>
 
             <div className={"basis-1/3 flex-1"}>
               <Image
                 src={web6}
-                alt={"Web 1"}
-                className={"rounded-lg object-cover"}
-                width={"100%"}
-                height={"100%"}
-                layout={"responsive"}
+                alt={"Portfolio 6"}
+                className={"rounded-lg object-cover w-full h-full"}
               />
             </div>
           </div>
