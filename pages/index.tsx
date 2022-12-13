@@ -90,8 +90,8 @@ export default function Home() {
             }
           >
             <Image
+              fill
               src={profile}
-              layout={"fill"}
               alt={"Profile picture of Cameron"}
               className={"object-cover"}
             />
