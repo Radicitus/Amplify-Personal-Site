@@ -15,8 +15,4 @@ if (isGithubActions) {
 module.exports = {
   assetPrefix: assetPrefix,
   basePath: basePath,
-  images: {
-    loader: "imgix",
-    path: "https://certamine.imgix.net",
-  },
 };
