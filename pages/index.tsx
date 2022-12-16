@@ -66,7 +66,7 @@ export default function Home() {
               }
             >
               College student just living life and enjoying a weird love hate
-              relationship with a lifelong passion for code.
+              relationship with a lifelong passion for code. MY NAME IS CAM!
             </p>
           </div>
 
